@@ -19,8 +19,8 @@ var colorScale = d3.scaleThreshold()
 // Load external data and boot
 d3.queue()
     .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-    .defer(d3.csv, "data/population.csv", function(d) { // change to the path to your local population.csv file
-        data.set(d['Region, subregion, country or area *'], +d['Total Population, as of 1 January (thousands)'] * 1000);
+    .defer(d3.csv, "data/population.csv", function(d) {
+        data.set(d['ISO3 Alpha-code'], +d['Total Population, as of 1 January (thousands)'] * 1000);
     })
     .await(ready);
 
