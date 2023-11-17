@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demographic Dashboard</title>
-    
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Demographic Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-         
-          <h3 class="text-muted">Demographic Dashboard</h3>
-        </div>
-  
-        <div class="row">
-          <div class="col-md-8">
-            <div id="map"></div>
-          </div>
-          <div class="col-md-4">
-            <div id="info">
-              <h3>Click on a country to explore</h3>
-              <script src="js/script.js"></script>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-
+  <div id="nav">
+    <p>
+      Current year: <span id="year-val"></span>
+      <input id="year" type="range" step="1">
+    </p>
+    <p>
+      Choose between total population or population density.
+      <input type="radio" name="data-type" value="population" checked>
+      <label>Population</label>
+      <input type="radio" name="data-type" value="density">
+      <label>density</label>
+    </p>
+    <p>Click on a country to see its trends by year.</p>
+  </div>
+  <section class="container">
+    <div class="chart-container">
+    <svg
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg"
+      id="map">
+    </svg>
+  </div>
+  <div class="chart-container right">
+    <svg
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg"
+      id="pie">
+    </svg>
+    <svg
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg"
+      id="bar">
+    </svg>
+  </div>
+  </section>
+  <div class="tooltip"></div>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="pie.js"></script>
+  <script src="bar.js"></script>
+  <script src="map.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
