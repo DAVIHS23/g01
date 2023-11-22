@@ -4,7 +4,7 @@ d3.queue()
     return {
       country: row.country,
       countryCode: row.locationCode,
-      population: +row.populationDensity1Jul,
+      population: +row.population1Jan * 1000,
       density: +row.populationDensity1Jul,
       year: +row.year
     }
@@ -14,12 +14,10 @@ d3.queue()
 
     var extremeYears = d3.extent(data, d => d.year);
     var currentYear = extremeYears[0];
-    var currentDataType = d3.select('input[name="data-type"]:checked')
-                            .attr("value");
+    var currentDataType = d3.select('input[name="data-type"]:checked').attr("value");
     var geoData = topojson.feature(mapData, mapData.objects.countries).features;
 
-    var width = +d3.select(".chart-container")
-                   .node().offsetWidth;
+    var width = +d3.select(".chart-container").node().offsetWidth;
     var height = 300;
 
     createMap(width, width * 4 / 5);
@@ -60,7 +58,7 @@ d3.queue()
       var isArc = tgt.classed("arc");
       var dataType = d3.select("input:checked")
                        .property("value");
-      var units = dataType === "population" ? "thousand metric tons" : "metric tons per capita";
+      var units = dataType === "population" ? "people" : "people per square km";
       var data;
       var percentage = "";
       if (isCountry) data = tgt.data()[0].properties;

@@ -70,12 +70,10 @@ function drawBar(data, dataType, country) {
       .duration(1000)
       .call(yAxis);
 
-  var axisLabel = dataType === "emissions" ?
-    "CO2 emissions, thousand metric tons" :
-    "CO2 emissions, metric tons per capita";
+  var axisLabel = dataType === "population" ? "amount of people" : "amount of people per square km";
 
   var barTitle = country ?
-    "CO2 Emissions, " + country :
+    "People, " + country :
     "Click on a country to see annual trends.";
 
   d3.select(".y-axis-label")

@@ -71,7 +71,7 @@ function drawMap(geoData, climateData, year, dataType) {
       });
 
   d3.select(".map-title")
-      .text("Carbon dioxide " + graphTitle(dataType) + ", " + year);
+      .text("Global " + graphTitle(dataType) + ", " + year);
 }
 
 function graphTitle(str) {

@@ -63,7 +63,7 @@ function drawPie(data, currentYear) {
       .attr("d", path);
 
   pie.select(".pie-title")
-      .text("Total population by continent and region, " + currentYear);
+      .text("Total population, " + currentYear);
 }
 
 
