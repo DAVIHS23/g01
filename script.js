@@ -56,8 +56,7 @@ d3.queue()
       var isCountry = tgt.classed("country");
       var isBar = tgt.classed("bar");
       var isArc = tgt.classed("arc");
-      var dataType = d3.select("input:checked")
-                       .property("value");
+      var dataType = d3.select("input:checked").property("value");
       var units = dataType === "population" ? "people" : "people per square km";
       var data;
       var percentage = "";
