@@ -108,7 +108,7 @@ function drawBar(data, dataType, country) {
       .attr("x", d => (xScale(d.year) + xScale(d.year - 1)) / 2)
       .attr("width", barWidth - barPadding)
       .transition(t)
-      .delay((d, i) => i * 100)
+      .delay((d, i) => i * 10)
         .attr("y", d => yScale(d[dataType]))
         .attr("height", d => height - padding.bottom - yScale(d[dataType]));
 }

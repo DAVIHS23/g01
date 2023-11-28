@@ -6,7 +6,10 @@ d3.queue()
       countryCode: row.locationCode,
       population: +row.population1Jan * 1000,
       density: +row.populationDensity1Jul,
-      year: +row.year
+      year: +row.year,
+      births: +row.births,
+      deaths: +row.deaths,
+      migration: +row.netMigrants
     }
   })
   .await(function(error, mapData, data) {
