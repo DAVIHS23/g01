@@ -1,15 +1,17 @@
 d3.queue()
   .defer(d3.json, "data/globalMap.json")
-  .defer(d3.csv, "data/population2.csv", function(row) {
+  .defer(d3.csv, "data/population3.csv", function(row) {
     return {
       country: row.country,
       countryCode: row.locationCode,
       population: +row.population1Jan * 1000,
       density: +row.populationDensity1Jul,
       year: +row.year,
-      births: +row.births,
-      deaths: +row.deaths,
-      migration: +row.netMigrants
+      femalePopulation: +row.femalePopulation1Jul * 1000,
+      malePopulation: +row.malePopulation1Jul * 1000,
+      births: +row.births * 1000,
+      deaths: +row.deaths * 1000,
+      migration: +row.netMigrants * 1000
     }
   })
   .await(function(error, mapData, data) {
@@ -82,6 +84,8 @@ d3.queue()
               <p>Country: ${data.country}</p>
               <p>${formatDataType(dataType)}: ${dataValue}</p>
               <p>Year: ${data.year || d3.select("#year").property("value")}</p>
+              <p>Females: ${data.femalePopulation.toLocaleString('de-DE')} | ${((data.femalePopulation / data.population) * 100).toFixed(2)}%</p>
+              <p>Males: ${data.malePopulation.toLocaleString('de-DE')} | ${((data.malePopulation / data.population) * 100).toFixed(2)}%</p>
               ${percentage}
             `)
       }

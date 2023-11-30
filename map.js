@@ -32,16 +32,19 @@ function drawMap(geoData, climateData, year, dataType) {
     d.properties = countries.find(c => c.year === year) || { country: name };
   });
 
-  var colors = ["#f1c40f", "#e67e22", "#e74c3c", "#c0392b"];
-
   var domains = {
-    population: [0, 2.5e5, 1e6, 5e6],
-    density: [0, 0.5, 2, 10]
+    population: [0, 5e4, 1e5, 5e5, 1e6, 5e6, 1e7, 5e7, 1e8, 5e8, 1e9, 1.4e9],
+    density: [0, 10, 50, 100, 300, 500, 1000, 2000, 5000, 10000]
+  };
+  
+  var colors = {
+    population: ["#e0f7fa", "#cceff9", "#b2e8f8", "#99e1f7", "#80dbf6", "#66d4f5", "#4dcef4", "#33c7f3", "#1ac0f2", "#00b9f1", "#00a1cf", "#0089ad"],
+    density: ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#ff0000", "#cc0000", "#990000", "#660000", "#330000", "#000000"]
   };
 
   var mapColorScale = d3.scaleLinear()
                         .domain(domains[dataType])
-                        .range(colors);
+                        .range(colors[dataType]);
 
   var update = map.selectAll(".country")
                   .data(geoData);
