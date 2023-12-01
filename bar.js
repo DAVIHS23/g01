@@ -112,25 +112,3 @@ function drawBar(data, dataType, country) {
         .attr("y", d => yScale(d[dataType]))
         .attr("height", d => height - padding.bottom - yScale(d[dataType]));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

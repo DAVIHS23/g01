@@ -31,6 +31,7 @@ d3.queue()
     drawMap(geoData, data, currentYear, currentDataType);
     drawPie(data, currentYear);
     drawBar(data, currentDataType, "");
+    updateGenderCounters(data, currentYear);
 
     d3.select("#year")
         .property("min", currentYear)
@@ -41,6 +42,7 @@ d3.queue()
           drawMap(geoData, data, currentYear, currentDataType);
           drawPie(data, currentYear);
           highlightBars(currentYear);
+          updateGenderCounters(data, currentYear);
         });
 
     d3.selectAll('input[name="data-type"]')
@@ -101,21 +103,3 @@ function getPercentage(d) {
   var fraction = 100 * angle / (Math.PI * 2);
   return fraction.toFixed(2) + "%";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

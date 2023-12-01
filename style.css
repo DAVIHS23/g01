@@ -127,3 +127,60 @@ body, html {
 .tick text {
   font-size: 1.5em;
 }
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+}
+
+#genderpic {
+  width: 100px;
+  height: auto;
+}
+
+#counter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.counter-column {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#femaleCounter,
+#maleCounter,
+#totalCounter {
+  background-color: #f0f0f0;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#femaleCounter {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+#maleCounter {
+  margin-right: 10%;
+  background-color: #3498db;
+  color: #fff;
+}
+
+#totalCounter h2 {
+  font-size: 1.2em;
+  margin: 0 0 10px;
+}

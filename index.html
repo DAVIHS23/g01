@@ -104,6 +104,7 @@
         xmlns="http://www.w3.org/2000/svg"
         id="map">
       </svg>
+      <hr>
     </div>
     <div class="chart-container right">
       <svg
@@ -112,12 +113,23 @@
         xmlns="http://www.w3.org/2000/svg"
         id="bar">
       </svg>
+      <hr>
       <svg
         version="1.1"
         baseProfile="full"
         xmlns="http://www.w3.org/2000/svg"
         id="pie">
       </svg>
+      <hr>
+    </div>
+    <div id="counter">
+      <div id="femaleCounter" class="counter-column"><span id="female-count">0</span></div>
+      <img id="genderpic" src="/media/gender_female_male.png" alt="Geschlechtssymbole">
+      <div id="maleCounter" class="counter-column"><span id="male-count">0</span></div>
+      <div id="totalCounter" class="counter-column">
+        <h2>Total Population</h2>
+        <span id="total-count">0</span>
+      </div>
     </div>
     </section>
     <div class="tooltip"></div>
@@ -127,6 +139,7 @@
     <script src="bar.js"></script>
     <script src="map.js"></script>
     <script src="script.js"></script>
+    <script src="populationCounter.js"></script>
   </div>   
 
   <!-- SECTION DESIGN -->
