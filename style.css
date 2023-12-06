@@ -161,22 +161,29 @@ hr {
 #maleCounter,
 #totalCounter {
   background-color: #f0f0f0;
-  margin: 20px;
-  padding: 10px;
   border-radius: 5px;
   font-size: 16px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 #femaleCounter {
+  margin: 20px;
+  padding: 20px;
   background-color: #e74c3c;
   color: #fff;
 }
 
 #maleCounter {
+  margin: 20px;
+  padding: 20px;
   margin-right: 10%;
   background-color: #3498db;
   color: #fff;
+}
+
+#totalCounter {
+  margin: 20px;
+  padding: 10px;
 }
 
 #totalCounter h2 {

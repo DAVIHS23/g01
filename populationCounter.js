@@ -15,7 +15,19 @@ function updateGenderCounters(data, year, selectedCountry) {
     totalCounter += d.population || 0;
   });
 
-  document.getElementById('femaleCounter').querySelector('span').innerText = femaleCounter.toLocaleString('de-DE');
-  document.getElementById('maleCounter').querySelector('span').innerText = maleCounter.toLocaleString('de-DE');
   document.getElementById('totalCounter').querySelector('span').innerText = totalCounter.toLocaleString('de-DE');
+
+  var femaleCountSpan = document.getElementById('femaleCounter').querySelector('span');
+  femaleCountSpan.innerText = femaleCounter.toLocaleString('de-DE');
+  
+  var femalePercentSpan = document.getElementById('femaleCounter').querySelector('#female-count-percent');
+  var femalePercentage = (femaleCounter / totalCounter * 100).toFixed(2) + '%';
+  femalePercentSpan.innerText = femalePercentage;
+
+  var maleCountSpan = document.getElementById('maleCounter').querySelector('span');
+  maleCountSpan.innerText = maleCounter.toLocaleString('de-DE');
+  
+  var malePercentSpan = document.getElementById('maleCounter').querySelector('#male-count-percent');
+  var malePercentage = (maleCounter / totalCounter * 100).toFixed(2) + '%';
+  malePercentSpan.innerText = malePercentage;
 }
