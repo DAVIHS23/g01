@@ -10,6 +10,36 @@ function createMap(width, height) {
       .classed("map-title", true);
 }
 
+function createLegend(map, domains, colors, dataType) {
+  // Position der Legende festlegen
+  var legendX = map.attr("width") - 100; // Ändern Sie diesen Wert für eine andere Position
+  var legendY = map.attr("height") - 300; // Ändern Sie diesen Wert für eine andere Position
+
+  var legend = map.append("g")
+                  .attr("class", "legend")
+                  .attr("transform", "translate(" + legendX + "," + legendY + ")");
+
+  var legendItemSize = 20;
+  var legendSpacing = 5;
+  var domain = domains[dataType];
+  var colorScale = d3.scaleLinear().domain(domain).range(colors[dataType]);
+
+  domain.forEach((d, i) => {
+    var legendItem = legend.append("g")
+                           .attr("transform", "translate(0," + (i * (legendItemSize + legendSpacing)) + ")");
+
+    legendItem.append("rect")
+              .attr("width", legendItemSize)
+              .attr("height", legendItemSize)
+              .attr("fill", colorScale(d));
+
+    legendItem.append("text")
+              .attr("x", legendItemSize + legendSpacing)
+              .attr("y", legendItemSize - legendSpacing)
+              .text(d);
+  });
+}
+
 function drawMap(geoData, climateData, year, dataType) {
   var map = d3.select("#map");
 
@@ -75,31 +105,10 @@ function drawMap(geoData, climateData, year, dataType) {
 
   d3.select(".map-title")
       .text("Global " + graphTitle(dataType) + ", " + year);
+
+  createLegend(map, domains, colors, dataType);
 }
 
 function graphTitle(str) {
   return str.replace(/[A-Z]/g, c => " " + c.toLowerCase());
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
