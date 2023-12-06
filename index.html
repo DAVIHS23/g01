@@ -1,169 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Demographic Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- NAVIGATION BAR -->
-  <div class="w3-top navbarbg">
-    <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
-            </a>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demographic Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <div class="w3-top navbarbg">
+      <div class="w3-bar" id="myNavbar">
+        <a
+          class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0);"
+          onclick="toggleFunction()"
+          title="Toggle Navigation Menu"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
 
-            <a href="#home" class="w3-bar-item w3-button">Home</a>
-            <a href="#info" class="w3-bar-item w3-button">Projektinformationen</a>
-            <a href="#data" class="w3-bar-item w3-button">Daten</a>
-            <a href="#viz" class="w3-bar-item w3-button">Visualisierung</a>
-            <a href="#design" class="w3-bar-item w3-button">Design Entscheidungen</a>
-            <a href="#ref" class="w3-bar-item w3-button">Referenzen</a>
-            <a href="#team" class="w3-bar-item w3-button">Team</a>
-    </div>
-  </div>
-
-  <!-- FIRST BG IMAGE / HOME SCREEN -->
-  <div class="bgimg-1 w3-display-containeer w3-opacity-min" id="home">
-      <div class="w3-display-middle" style="white-space:nowrap;">
-              <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DAVI – World Population</span>
+        <a href="#home" class="w3-bar-item w3-button">Home</a>
+        <a href="#info" class="w3-bar-item w3-button">Projektinformationen</a>
+        <a href="#data" class="w3-bar-item w3-button">Daten</a>
+        <a href="#viz" class="w3-bar-item w3-button">Visualisierung</a>
+        <a href="#design" class="w3-bar-item w3-button"
+          >Design Entscheidungen</a
+        >
+        <a href="#ref" class="w3-bar-item w3-button">Referenzen</a>
+        <a href="#team" class="w3-bar-item w3-button">Team</a>
       </div>
-  </div>
+    </div>
 
-  <!-- SECTION PROJECT INFO   -->
-  <div class="w3-content w3-container w3-padding-64" id="info">
+    <!-- FIRST BG IMAGE / HOME SCREEN -->
+    <div class="bgimg-1 w3-display-containeer w3-opacity-min" id="home">
+      <div class="w3-display-middle" style="white-space: nowrap">
+        <span
+          class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"
+          >DAVI – World Population</span
+        >
+      </div>
+    </div>
+
+    <!-- SECTION PROJECT INFO   -->
+    <div class="w3-content w3-container w3-padding-64" id="info">
       <h3 class="w4-center">Projektinformationen</h3>
-      In einer Welt voller Wandel, in welcher demographische Trends sich stetig ändern, 
-      ist es wichtiger denn je, ein umfassendes Verständnis für demographische Entwicklungen 
-      zu entwickeln. In diesem Zusammenhang ist das Weltbevölkerungs-Dashboard ein wichtiges 
-      Werkzeug, um die umfangreichen Daten in einer zugänglichen und interaktiven Art und Weise 
-      darzustellen. Es bietet nicht nur einen detaillierten Überblick über aktuelle und historische 
-      Bevölkerungsdaten, sondern auch Einblicke in Geburten- und Sterberaten sowie Migrationsbewegungen. <br /><br />
-      Die Entwicklung eines solchen Dashboards ermöglicht es der breiten Öffentlichkeit, sich 
-      über die demografische Entwicklung in verschiedenen Regionen der Welt zu informieren und 
-      ein besseres Verständnis für globale Veränderungen zu erlangen. Ausserdem trägt es dazu bei, 
-      das Bewusstsein für wichtige Themen wie Überbevölkerung, Urbanisierung und die Auswirkungen 
-      des demografischen Wandels auf die Umwelt zu schärfen. <br /><br />
-      <h5>Skizze</h5><br />
-      Die Skizze des Dashboards zielt darauf ab, eine intuitive und benutzerfreundliche Oberfläche 
-      zu schaffen, die es ermöglicht, verschiedene Datenpunkte zu erkunden und zu vergleichen. Interaktive 
-      Karten, Diagramme und Zeitleisten ermöglichen es den Nutzern, in die Daten einzutauchen und ihre 
-      eigenen Schlüsse aus den Trends zu ziehen. Das Dashboard ist nicht nur ein Werkzeug zur Visualisierung 
-      von Daten, sondern auch ein Instrument, das einen  Beitrag zum Verständnis unserer sich ständig verändernden Welt leistet.
-      <img src="./media/skizze.jpg">
-  </div>
+      In einer Welt voller Wandel, in welcher demographische Trends sich stetig
+      ändern, ist es wichtiger denn je, ein umfassendes Verständnis für
+      demographische Entwicklungen zu entwickeln. In diesem Zusammenhang ist das
+      Weltbevölkerungs-Dashboard ein wichtiges Werkzeug, um die umfangreichen
+      Daten in einer zugänglichen und interaktiven Art und Weise darzustellen.
+      Es bietet nicht nur einen detaillierten Überblick über aktuelle und
+      historische Bevölkerungsdaten, sondern auch Einblicke in Geburten- und
+      Sterberaten sowie Migrationsbewegungen. <br /><br />
+      Die Entwicklung eines solchen Dashboards ermöglicht es der breiten
+      Öffentlichkeit, sich über die demografische Entwicklung in verschiedenen
+      Regionen der Welt zu informieren und ein besseres Verständnis für globale
+      Veränderungen zu erlangen. Ausserdem trägt es dazu bei, das Bewusstsein
+      für wichtige Themen wie Überbevölkerung, Urbanisierung und die
+      Auswirkungen des demografischen Wandels auf die Umwelt zu schärfen.
+      <br /><br />
+      <h5>Skizze</h5>
+      <br />
+      Die Skizze des Dashboards zielt darauf ab, eine intuitive und
+      benutzerfreundliche Oberfläche zu schaffen, die es ermöglicht,
+      verschiedene Datenpunkte zu erkunden und zu vergleichen. Interaktive
+      Karten, Diagramme und Zeitleisten ermöglichen es den Nutzern, in die Daten
+      einzutauchen und ihre eigenen Schlüsse aus den Trends zu ziehen. Das
+      Dashboard ist nicht nur ein Werkzeug zur Visualisierung von Daten, sondern
+      auch ein Instrument, das einen Beitrag zum Verständnis unserer sich
+      ständig verändernden Welt leistet.
+      <img src="./media/skizze.jpg" />
+    </div>
 
-  <!-- SECOND BG IMAGE WITH Data TEXT -->
+    <!-- SECOND BG IMAGE WITH Data TEXT -->
 
-  <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
       <div class="w3-display-middle">
-          <span class="w3-xxlarge w3-text-white w3-wide">DATA</span>
+        <span class="w3-xxlarge w3-text-white w3-wide">DATA</span>
       </div>
-  </div>
+    </div>
 
-
-  <!-- SECTION DATA   -->
-  <div class="w3-content w3-container w3-padding-64" id="data">
+    <!-- SECTION DATA   -->
+    <div class="w3-content w3-container w3-padding-64" id="data">
       <h3 class="w3-center">Data</h3>
-      <p>&DAVI& Untertitel<br/>
-          &DAVI& Text woher die Daten kommen nach Aufgabenstellung
+      <p>
+        &DAVI& Untertitel<br />
+        &DAVI& Text woher die Daten kommen nach Aufgabenstellung
       </p>
-  </div>
-  <!-- SECTION VISUALIZATION -->
+    </div>
+    <!-- SECTION VISUALIZATION -->
 
-  <div class="w3-content w3-container w3-padding-64" id="viz">
-    <h3 class="w3-center">Visualization</h3>
-    <p>&DAVI& Untertitel<br/>
-        &DAVI& Hierhin kommt der komplette D3 Code (kann natürlich auch mit externen script gemacht werden, aber hier hat er auch Platz)
-        Beispiel: <br/>
-    </p>
-    <div id="nav">
+    <div class="w3-content w3-container w3-padding-64" id="viz">
+      <h3 class="w3-center">Visualization</h3>
       <p>
-        Current year: <span id="year-val"></span>
-        <input id="year" type="range" step="1">
+        &DAVI& Untertitel<br />
+        &DAVI& Hierhin kommt der komplette D3 Code (kann natürlich auch mit
+        externen script gemacht werden, aber hier hat er auch Platz) Beispiel:
+        <br />
       </p>
-      <p>
-        Choose between total population or population density.
-        <input type="radio" name="data-type" value="population" checked>
-        <label>Population</label>
-        <input type="radio" name="data-type" value="density">
-        <label>density</label>
-      </p>
-      <p>Click on a country to see its trends by year.</p>
-    </div>
-    <section class="container">
-    <div class="chart-container">
-      <svg
-        version="1.1"
-        baseProfile="full"
-        xmlns="http://www.w3.org/2000/svg"
-        id="map">
-      </svg>
-      <hr>
-    </div>
-    <div class="chart-container right">
-      <svg
-        version="1.1"
-        baseProfile="full"
-        xmlns="http://www.w3.org/2000/svg"
-        id="bar">
-      </svg>
-      <hr>
-      <svg
-        version="1.1"
-        baseProfile="full"
-        xmlns="http://www.w3.org/2000/svg"
-        id="pie">
-      </svg>
-      <hr>
-    </div>
-    <div id="counter">
-      <div id="femaleCounter" class="counter-column"><span id="female-count">0</span></div>
-      <img id="genderpic" src="/media/gender_female_male.png" alt="Geschlechtssymbole">
-      <div id="maleCounter" class="counter-column"><span id="male-count">0</span></div>
-      <div id="totalCounter" class="counter-column">
-        <h2>Total Population</h2>
-        <span id="total-count">0</span>
+      <div id="nav">
+        <p>
+          Current year: <span id="year-val"></span>
+          <input id="year" type="range" step="1" />
+        </p>
+        <p>
+          Choose between total population or population density.
+          <input type="radio" name="data-type" value="population" checked />
+          <label>Population</label>
+          <input type="radio" name="data-type" value="density" />
+          <label>density</label>
+        </p>
+        <p>Click on a country to see its trends by year.</p>
       </div>
-      <hr>
+      <section class="container">
+        <div class="row">
+          <div class="column">
+            <div class="chart-container">
+              <svg
+                version="1.1"
+                baseProfile="full"
+                xmlns="http://www.w3.org/2000/svg"
+                id="map"
+              ></svg>
+            </div>
+          </div>
+          <div class="column">
+            <div id="counter">
+              <div id="femaleCounter" class="counter-column">
+                <span id="female-count">0</span>
+              </div>
+              <img
+                id="genderpic"
+                src="/media/gender_female_male.png"
+                alt="Geschlechtssymbole"
+              />
+              <div id="maleCounter" class="counter-column">
+                <span id="male-count">0</span>
+              </div>
+              <div id="totalCounter" class="counter-column">
+                <h2>Total Population</h2>
+                <span id="total-count">0</span>
+              </div>
+            </div>
+            <div id="pies">
+              <div id="birthPie" class="counter-column">Test</div>
+              <div id="deathPie" class="counter-column">Test</div>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <div class="chart-container right">
+          <hr />
+          <svg
+            version="1.1"
+            baseProfile="full"
+            xmlns="http://www.w3.org/2000/svg"
+            id="bar"
+          ></svg>
+          <hr />
+          <svg
+            version="1.1"
+            baseProfile="full"
+            xmlns="http://www.w3.org/2000/svg"
+            id="pie"
+          ></svg>
+          <hr />
+        </div>
+      </section>
+      <div class="tooltip"></div>
+      <script src="https://d3js.org/d3.v4.js"></script>
+      <script src="https://unpkg.com/topojson@3"></script>
+      <script src="script.js"></script>
+      <script src="pie.js"></script>
+      <script src="bar.js"></script>
+      <script src="map.js"></script>
+      <script src="populationCounter.js"></script>
     </div>
-    </section>
-    <div class="tooltip"></div>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://unpkg.com/topojson@3"></script>
-    <script src="script.js"></script>
-    <script src="pie.js"></script>
-    <script src="bar.js"></script>
-    <script src="map.js"></script>
-    <script src="populationCounter.js"></script>
-  </div>   
-  <!-- SECTION DESIGN -->
-  <div class="w3-content w3-container w3-padding-64" id="design">
+    <!-- SECTION DESIGN -->
+    <div class="w3-content w3-container w3-padding-64" id="design">
       <h3 class="w3-center">Desing</h3>
-      <p>&DAVI& Untertitel<br/>
-          &DAVI& Hier die Info wieso weshalb warum man was hingebogen hat im D3
+      <p>
+        &DAVI& Untertitel<br />
+        &DAVI& Hier die Info wieso weshalb warum man was hingebogen hat im D3
       </p>
-  </div>  
-  <!-- SECTION DESIGN -->
+    </div>
+    <!-- SECTION DESIGN -->
 
-  <div class="w3-content w3-container w3-padding-64" id="ref">
+    <div class="w3-content w3-container w3-padding-64" id="ref">
       <h3 class="w3-center">References</h3>
-      <p>&DAVI& Untertitel<br/>
-          &DAVI& Wo hast du was geklaut?, die Website hier ist von W3.org, einfach in einer viel weniger fancy-version
+      <p>
+        &DAVI& Untertitel<br />
+        &DAVI& Wo hast du was geklaut?, die Website hier ist von W3.org, einfach
+        in einer viel weniger fancy-version
       </p>
-  </div>  
-  <!-- SECTION DESIGN -->
+    </div>
+    <!-- SECTION DESIGN -->
 
-  <div class="w3-content w3-container w3-padding-64" id="Team">
+    <div class="w3-content w3-container w3-padding-64" id="Team">
       <h3 class="w3-center">Team</h3>
-      <p>&DAVI& Untertitel<br/>
-          &DAVI& Kontaktdaten des Teams
+      <p>
+        &DAVI& Untertitel<br />
+        &DAVI& Kontaktdaten des Teams
       </p>
-  </div>  
-</body>
+    </div>
+  </body>
 </html>

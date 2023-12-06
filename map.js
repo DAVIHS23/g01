@@ -1,3 +1,5 @@
+var currentCountryName = "";
+
 function createMap(width, height) {
   d3.select("#map")
       .attr("width", width)
@@ -32,6 +34,14 @@ function createLegend(map, domains, colors, dataType) {
               .attr("width", legendItemSize)
               .attr("height", legendItemSize)
               .attr("fill", colorScale(d));
+
+    if (d < 1000000) {
+      d = (d / 1000) + " Tsd."
+    } else if (d >= 1000000 && d < 1000000000) {
+      d = (d / 1000000) + " Mio."
+    } else if (d >= 1000000000) {
+      d = (d / 1000000000) + " Mia."
+    }
 
     legendItem.append("text")
               .attr("x", legendItemSize + legendSpacing)
@@ -90,10 +100,12 @@ function drawMap(geoData, climateData, year, dataType) {
         var country = d3.select(this);
         var isActive = country.classed("active");
         var countryName = isActive ? "" : country.data()[0].properties.country;
+        currentCountryName = countryName;
         drawBar(climateData, currentDataType, countryName);
+        updateGenderCounters(climateData, +d3.select("#year").property("value"), countryName);
         highlightBars(+d3.select("#year").property("value"));
         d3.selectAll(".country").classed("active", false);
-        country.classed("active", !isActive);
+        country.classed("active", !isActive);  
       })
     .merge(update)
       .transition()
@@ -106,7 +118,20 @@ function drawMap(geoData, climateData, year, dataType) {
   d3.select(".map-title")
       .text("Global " + graphTitle(dataType) + ", " + year);
 
-  createLegend(map, domains, colors, dataType);
+  if (currentCountryName != "") {
+    updateGenderCounters(climateData, year, currentCountryName);
+  } else if (currentCountryName == undefined) {
+    currentCountryName = "";
+    updateGenderCounters(climateData, year);
+  } else if (currentCountryName == "") {
+    updateGenderCounters(climateData, year);
+  }
+
+  var legendElement = document.querySelector('g.legend');
+
+  if (legendElement == null) {
+    createLegend(map, domains, colors, dataType);
+  }
 }
 
 function graphTitle(str) {

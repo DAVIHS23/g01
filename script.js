@@ -22,10 +22,13 @@ d3.queue()
     var currentDataType = d3.select('input[name="data-type"]:checked').attr("value");
     var geoData = topojson.feature(mapData, mapData.objects.countries).features;
 
-    var width = +d3.select(".chart-container").node().offsetWidth;
+    //var width = +d3.select(".chart-container").node().offsetWidth;
+    var width = 900;
     var height = 300;
+    var mapHeight = 520;
+    var mapWidth = 900;
 
-    createMap(width, width * 4 / 5);
+    createMap(mapWidth, mapHeight);
     createPie(width, height);
     createBar(width, height);
     drawMap(geoData, data, currentYear, currentDataType);
@@ -42,7 +45,6 @@ d3.queue()
           drawMap(geoData, data, currentYear, currentDataType);
           drawPie(data, currentYear);
           highlightBars(currentYear);
-          updateGenderCounters(data, currentYear);
         });
 
     d3.selectAll('input[name="data-type"]')

@@ -2,8 +2,8 @@ var femaleCounter = 0;
 var maleCounter = 0;
 var totalCounter = 0;
 
-function updateGenderCounters(data, year) {
-  var filteredData = data.filter(d => d.year === year);
+function updateGenderCounters(data, year, selectedCountry) {
+  var filteredData = data.filter(d => d.year === year && (!selectedCountry || d.country === selectedCountry));
 
   femaleCounter = 0;
   maleCounter = 0;
@@ -17,12 +17,5 @@ function updateGenderCounters(data, year) {
 
   document.getElementById('femaleCounter').querySelector('span').innerText = femaleCounter.toLocaleString('de-DE');
   document.getElementById('maleCounter').querySelector('span').innerText = maleCounter.toLocaleString('de-DE');
-  document.getElementById('totalCounter').querySelector('span').innerText = totalCounter.toLocaleString('de-DE'); // Hinzugefügt
+  document.getElementById('totalCounter').querySelector('span').innerText = totalCounter.toLocaleString('de-DE');
 }
-
-document.getElementById('year').addEventListener('input', function() {
-  var selectedYear = +this.value;
-  updateGenderCounters(data, selectedYear);
-});
-
-updateGenderCounters(data, currentYear);

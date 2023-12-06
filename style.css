@@ -78,11 +78,10 @@ body, html {
  
 .chart-container {
   display: inline-block;
-  width: 97%;
+  width: 100%;
   margin: 1% 2%;
   vertical-align: top;
 }
-
 .tooltip {
   opacity: 0;
   position: absolute;
@@ -162,8 +161,8 @@ hr {
 #maleCounter,
 #totalCounter {
   background-color: #f0f0f0;
-  margin: 10px;
-  padding: 15px;
+  margin: 20px;
+  padding: 10px;
   border-radius: 5px;
   font-size: 16px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -183,4 +182,17 @@ hr {
 #totalCounter h2 {
   font-size: 1.2em;
   margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.w3-content {
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
