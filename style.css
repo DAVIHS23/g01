@@ -203,3 +203,15 @@ hr {
 .column {
   flex: 50%;
 }
+
+.pie-birth-legend {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px; /* Einstellbarer Abstand zur Seite */
+}
+
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}

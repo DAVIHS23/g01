@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
     <!-- NAVIGATION BAR -->
@@ -141,6 +142,7 @@
             <div id="counter">
               <div id="femaleCounter" class="counter-column">
                 <span id="female-count">0</span>
+                <br />
                 <span id="female-count-percent">0%</span>
               </div>
               <img
@@ -150,6 +152,7 @@
               />
               <div id="maleCounter" class="counter-column">
                 <span id="male-count">0</span>
+                <br />
                 <span id="male-count-percent">0%</span>
               </div>
               <div id="totalCounter" class="counter-column">
@@ -158,7 +161,7 @@
               </div>
             </div>
             <div id="pies">
-              <div id="birthPie" class="counter-column">Test</div>
+              <div id="birthPie" class="counter-column"></div>
               <div id="deathPie" class="counter-column">Test</div>
             </div>
           </div>
@@ -173,23 +176,16 @@
             id="bar"
           ></svg>
           <hr />
-          <svg
-            version="1.1"
-            baseProfile="full"
-            xmlns="http://www.w3.org/2000/svg"
-            id="pie"
-          ></svg>
-          <hr />
         </div>
       </section>
+      <div id="birth-pie"></div>
       <div class="tooltip"></div>
-      <script src="https://d3js.org/d3.v4.js"></script>
       <script src="https://unpkg.com/topojson@3"></script>
-      <script src="script.js"></script>
-      <script src="pie.js"></script>
       <script src="bar.js"></script>
       <script src="map.js"></script>
       <script src="populationCounter.js"></script>
+      <script src="pieNew.js"></script>
+      <script src="script.js"></script>
     </div>
     <!-- SECTION DESIGN -->
     <div class="w3-content w3-container w3-padding-64" id="design">

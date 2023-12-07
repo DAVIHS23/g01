@@ -4,6 +4,7 @@ d3.queue()
     return {
       country: row.country,
       countryCode: row.locationCode,
+      countryCodeISO: row.countryCodeISO,
       population: +row.population1Jan * 1000,
       density: +row.populationDensity1Jul,
       year: +row.year,
@@ -29,12 +30,11 @@ d3.queue()
     var mapWidth = 900;
 
     createMap(mapWidth, mapHeight);
-    createPie(width, height);
     createBar(width, height);
     drawMap(geoData, data, currentYear, currentDataType);
-    drawPie(data, currentYear);
     drawBar(data, currentDataType, "");
     updateGenderCounters(data, currentYear);
+    drawNewPie(data, currentYear);
 
     d3.select("#year")
         .property("min", currentYear)
@@ -43,7 +43,6 @@ d3.queue()
         .on("input", () => {
           currentYear = +d3.event.target.value;
           drawMap(geoData, data, currentYear, currentDataType);
-          drawPie(data, currentYear);
           highlightBars(currentYear);
         });
 
