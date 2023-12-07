@@ -72,9 +72,8 @@ function drawBar(data, dataType, country) {
 
   var axisLabel = dataType === "population" ? "amount of people" : "amount of people per square km";
 
-  var barTitle = country ?
-    "People, " + country :
-    "Click on a country to see annual trends.";
+  var barTitle = country ? (dataType === "population" ? "Population in " + country : "Density in " + country) : "Click on a country to see annual trends.";
+
 
   d3.select(".y-axis-label")
       .text(axisLabel);
