@@ -103,6 +103,7 @@ function drawMap(geoData, climateData, year, dataType) {
         currentCountryName = countryName;
         drawBar(climateData, currentDataType, countryName);
         updateGenderCounters(climateData, +d3.select("#year").property("value"), countryName);
+        drawMigrationsGraph(climateData, countryName);
         highlightBars(+d3.select("#year").property("value"));
         d3.selectAll(".country").classed("active", false);
         country.classed("active", !isActive);  

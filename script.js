@@ -32,9 +32,11 @@ d3.queue()
     createPie(width, height);
     createBar(width, height);
     drawMap(geoData, data, currentYear, currentDataType);
-    drawPie(data, currentYear);
     drawBar(data, currentDataType, "");
     updateGenderCounters(data, currentYear);
+    drawMigrationsGraph(data, "");
+    drawPie(data, currentYear);
+
 
     d3.select("#year")
         .property("min", currentYear)
@@ -43,8 +45,8 @@ d3.queue()
         .on("input", () => {
           currentYear = +d3.event.target.value;
           drawMap(geoData, data, currentYear, currentDataType);
-          drawPie(data, currentYear);
           highlightBars(currentYear);
+          drawPie(data, currentYear);
         });
 
     d3.selectAll('input[name="data-type"]')
@@ -54,6 +56,8 @@ d3.queue()
           currentDataType = d3.event.target.value;
           drawMap(geoData, data, currentYear, currentDataType);
           drawBar(data, currentDataType, country);
+          drawMigrationsGraph(data, country);
+          drawMigrationsGraph(data, country);
         });
 
     d3.selectAll("svg")

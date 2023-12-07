@@ -113,9 +113,15 @@
       </p>
       <div id="nav">
         <p>
-          Current year: <span id="year-val"></span>
-          <input id="year" type="range" step="1" />
+          Current year: <span id="year-val" style="font-weight: bold;"></span>
         </p>
+      
+        <!-- Zeile für die Skala mit Jahreszahlen -->
+        <div>
+          <span>1950</span>
+          <input id="year" type="range" step="1" />
+          <span>2021</span>
+        </div>
         <p>
           Choose between total population or population density.
           <input type="radio" name="data-type" value="population" checked />
@@ -162,32 +168,31 @@
           </div>
           <hr />
         </div>
-        <div class="chart-container right">
-          <hr />
-          <svg
-            version="1.1"
-            baseProfile="full"
-            xmlns="http://www.w3.org/2000/svg"
-            id="bar"
-          ></svg>
-          <hr />
-          <svg
-            version="1.1"
-            baseProfile="full"
-            xmlns="http://www.w3.org/2000/svg"
-            id="pie"
-          ></svg>
-          <hr />
+        <div class="row">
+          <div class="column">
+            <hr />
+            <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="bar"></svg>
+            <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="migrationsGraph"></svg>
+            <hr />
+            <svg
+              version="1.1"
+              baseProfile="full"
+              xmlns="http://www.w3.org/2000/svg"
+              id="pie"
+            ></svg>
+            <hr />
+          </div>
         </div>
       </section>
       <div class="tooltip"></div>
       <script src="https://d3js.org/d3.v4.js"></script>
       <script src="https://unpkg.com/topojson@3"></script>
       <script src="script.js"></script>
-      <script src="pie.js"></script>
       <script src="bar.js"></script>
       <script src="map.js"></script>
       <script src="populationCounter.js"></script>
+      <script src="migrationsGraph.js"></script>
+      <script src="pie.js"></script>
     </div>
     <!-- SECTION DESIGN -->
     <div class="w3-content w3-container w3-padding-64" id="design">

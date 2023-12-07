@@ -196,3 +196,14 @@ hr {
 .column {
   flex: 50%;
 }
+
+#bar {
+  margin-top: 100px;
+  height: 500px;
+  width: 55%;
+}
+
+#migrationsGraph {
+  height: 500px;
+  width: 40%;
+}
