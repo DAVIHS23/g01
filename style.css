@@ -65,7 +65,7 @@ body, html {
 }
 
 .container {
-  display: flex;
+  /*display: flex;*/
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -204,13 +204,11 @@ hr {
   flex: 50%;
 }
 
-#bar {
-  margin-top: 100px;
-  height: 500px;
-  width: 55%;
+#migrationsGraph {
+  width: 900px;
+  height: 350px;
 }
 
-#migrationsGraph {
-  height: 500px;
-  width: 40%;
+#bar {
+  margin-top: 50px;
 }

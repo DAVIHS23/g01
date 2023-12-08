@@ -1,6 +1,6 @@
 d3.queue()
   .defer(d3.json, "data/globalMap.json")
-  .defer(d3.csv, "data/population3.csv", function(row) {
+  .defer(d3.csv, "data/population3.csv", function (row) {
     return {
       country: row.country,
       countryCode: row.locationCode,
@@ -12,15 +12,17 @@ d3.queue()
       malePopulation: +row.malePopulation1Jul * 1000,
       births: +row.births * 1000,
       deaths: +row.deaths * 1000,
-      migration: +row.netMigrants * 1000
-    }
+      migration: +row.netMigrants * 1000,
+    };
   })
-  .await(function(error, mapData, data) {
+  .await(function (error, mapData, data) {
     if (error) throw error;
 
-    var extremeYears = d3.extent(data, d => d.year);
+    var extremeYears = d3.extent(data, (d) => d.year);
     var currentYear = extremeYears[0];
-    var currentDataType = d3.select('input[name="data-type"]:checked').attr("value");
+    var currentDataType = d3
+      .select('input[name="data-type"]:checked')
+      .attr("value");
     var geoData = topojson.feature(mapData, mapData.objects.countries).features;
 
     //var width = +d3.select(".chart-container").node().offsetWidth;
@@ -35,33 +37,33 @@ d3.queue()
     drawBar(data, currentDataType, "");
     updateGenderCounters(data, currentYear);
     drawMigrationsGraph(data, "");
-    drawNewPie(data, currentYear);
+    drawBirthPie(data, currentYear);
+    drawDeathPie(data, currentYear);
 
     d3.select("#year")
-        .property("min", currentYear)
-        .property("max", extremeYears[1])
-        .property("value", currentYear)
-        .on("input", () => {
-          currentYear = +d3.event.target.value;
-          drawMap(geoData, data, currentYear, currentDataType);
-          highlightBars(currentYear);
-          highlightBars(currentYear);
-          updateNewPie(data, currentYear);
-        });
+      .property("min", currentYear)
+      .property("max", extremeYears[1])
+      .property("value", currentYear)
+      .on("input", () => {
+        currentYear = +d3.event.target.value;
+        drawMap(geoData, data, currentYear, currentDataType);
+        highlightBars(currentYear);
+        highlightBars(currentYear);
+        updateBirthPie(data, currentYear);
+        updateDeathPie(data, currentYear);
+      });
 
-    d3.selectAll('input[name="data-type"]')
-        .on("change", () => {
-          var active = d3.select(".active").data()[0];
-          var country = active ? active.properties.country : "";
-          currentDataType = d3.event.target.value;
-          drawMap(geoData, data, currentYear, currentDataType);
-          drawBar(data, currentDataType, country);
-          drawMigrationsGraph(data, country);
-          drawMigrationsGraph(data, country);
-        });
+    d3.selectAll('input[name="data-type"]').on("change", () => {
+      var active = d3.select(".active").data()[0];
+      var country = active ? active.properties.country : "";
+      currentDataType = d3.event.target.value;
+      drawMap(geoData, data, currentYear, currentDataType);
+      drawBar(data, currentDataType, country);
+      drawMigrationsGraph(data, country);
+      drawMigrationsGraph(data, country);
+    });
 
-    d3.selectAll("svg")
-        .on("mousemove touchmove", updateTooltip);
+    d3.selectAll("svg").on("mousemove touchmove", updateTooltip);
 
     function updateTooltip() {
       var tooltip = d3.select(".tooltip");
@@ -76,36 +78,43 @@ d3.queue()
       if (isCountry) data = tgt.data()[0].properties;
       if (isArc) {
         data = tgt.data()[0].data;
-        percentage = `<p>Percentage of total: ${getPercentage(tgt.data()[0])}</p>`;
+        percentage = `<p>Percentage of total: ${getPercentage(
+          tgt.data()[0]
+        )}</p>`;
       }
       if (isBar) data = tgt.data()[0];
       tooltip
-          .style("opacity", +(isCountry || isArc || isBar))
-          .style("left", (d3.event.pageX - tooltip.node().offsetWidth / 2) + "px")
-          .style("top", (d3.event.pageY - tooltip.node().offsetHeight - 10) + "px");
+        .style("opacity", +(isCountry || isArc || isBar))
+        .style("left", d3.event.pageX - tooltip.node().offsetWidth / 2 + "px")
+        .style("top", d3.event.pageY - tooltip.node().offsetHeight - 10 + "px");
       if (data) {
-        var dataValue = data[dataType] ?
-          data[dataType].toLocaleString() + " " + units :
-          "Data Not Available";
-        tooltip 
-            .html(`
+        var dataValue = data[dataType]
+          ? data[dataType].toLocaleString() + " " + units
+          : "Data Not Available";
+        tooltip.html(`
               <p>Country: ${data.country}</p>
               <p>${formatDataType(dataType)}: ${dataValue}</p>
               <p>Year: ${data.year || d3.select("#year").property("value")}</p>
-              <p>Females: ${data.femalePopulation.toLocaleString('de-DE')} | ${((data.femalePopulation / data.population) * 100).toFixed(2)}%</p>
-              <p>Males: ${data.malePopulation.toLocaleString('de-DE')} | ${((data.malePopulation / data.population) * 100).toFixed(2)}%</p>
+              <p>Females: ${data.femalePopulation.toLocaleString("de-DE")} | ${(
+          (data.femalePopulation / data.population) *
+          100
+        ).toFixed(2)}%</p>
+              <p>Males: ${data.malePopulation.toLocaleString("de-DE")} | ${(
+          (data.malePopulation / data.population) *
+          100
+        ).toFixed(2)}%</p>
               ${percentage}
-            `)
+            `);
       }
     }
   });
 
 function formatDataType(key) {
-  return key[0].toUpperCase() + key.slice(1).replace(/[A-Z]/g, c => " " + c);
+  return key[0].toUpperCase() + key.slice(1).replace(/[A-Z]/g, (c) => " " + c);
 }
 
 function getPercentage(d) {
   var angle = d.endAngle - d.startAngle;
-  var fraction = 100 * angle / (Math.PI * 2);
+  var fraction = (100 * angle) / (Math.PI * 2);
   return fraction.toFixed(2) + "%";
 }

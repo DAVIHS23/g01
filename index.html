@@ -166,29 +166,34 @@
                 <span id="total-count">0</span>
               </div>
             </div>
-            <div id="pies">
-              <div id="birth-pie" class="counter-column"></div>
-              <div id="death-pie" class="counter-column">Test</div>
+            <div id="pies" class="row">
+              <div class="column">
+                <div id="birth-pie" class="counter-column"></div>
+              </div>
+              <div class="column">
+                <div id="death-pie" class="counter-column"></div>
+              </div>
             </div>
           </div>
-          <hr />
         </div>
+        <hr>
         <div class="row">
           <div class="column">
-            <hr />
             <svg
               version="1.1"
               baseProfile="full"
               xmlns="http://www.w3.org/2000/svg"
               id="bar"
             ></svg>
+          </div>
+            <div class="column">
             <svg
               version="1.1"
               baseProfile="full"
               xmlns="http://www.w3.org/2000/svg"
               id="migrationsGraph"
             ></svg>
-            <hr />
+          </div>
           </div>
         </div>
       </section>
@@ -199,7 +204,8 @@
       <script src="map.js"></script>
       <script src="populationCounter.js"></script>
       <script src="migrationsGraph.js"></script>
-      <script src="pieNew.js"></script>
+      <script src="birthPie.js"></script>
+      <script src="deathPie.js"></script>
     </div>
     <!-- SECTION DESIGN -->
     <div class="w3-content w3-container w3-padding-64" id="design">
