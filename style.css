@@ -204,18 +204,6 @@ hr {
   flex: 50%;
 }
 
-<<<<<<< HEAD
-.pie-birth-legend {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px; /* Einstellbarer Abstand zur Seite */
-}
-
-.pie-legend-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-=======
 #bar {
   margin-top: 100px;
   height: 500px;
@@ -225,5 +213,4 @@ hr {
 #migrationsGraph {
   height: 500px;
   width: 40%;
->>>>>>> 0114d4a07d42fa6b1e4dae0f3923f997a46901eb
 }

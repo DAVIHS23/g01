@@ -35,8 +35,7 @@ d3.queue()
     drawBar(data, currentDataType, "");
     updateGenderCounters(data, currentYear);
     drawMigrationsGraph(data, "");
-    drawPie(data, currentYear);
-
+    drawNewPie(data, currentYear);
 
     d3.select("#year")
         .property("min", currentYear)
@@ -47,7 +46,7 @@ d3.queue()
           drawMap(geoData, data, currentYear, currentDataType);
           highlightBars(currentYear);
           highlightBars(currentYear);
-          drawPie(data, currentYear);
+          updateNewPie(data, currentYear);
         });
 
     d3.selectAll('input[name="data-type"]')
