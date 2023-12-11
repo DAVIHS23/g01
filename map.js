@@ -13,6 +13,7 @@ function createMap(width, height) {
 }
 
 function createLegend(map, domains, colors, dataType) {
+  map.select(".legend").remove();
   // Position der Legende festlegen
   var legendX = map.attr("width") - 100; // Ändern Sie diesen Wert für eine andere Position
   var legendY = map.attr("height") - 300; // Ändern Sie diesen Wert für eine andere Position
@@ -127,12 +128,8 @@ function drawMap(geoData, climateData, year, dataType) {
   } else if (currentCountryName == "") {
     updateGenderCounters(climateData, year);
   }
-
-  var legendElement = document.querySelector('g.legend');
-
-  if (legendElement == null) {
-    createLegend(map, domains, colors, dataType);
-  }
+  
+  createLegend(map, domains, colors, dataType);
 }
 
 function graphTitle(str) {

@@ -90,16 +90,37 @@
 
     <div class="bgimg-2 w3-display-container w3-opacity-min">
       <div class="w3-display-middle">
-        <span class="w3-xxlarge w3-text-white w3-wide">DATA</span>
+        <span class="w3-xxlarge w3-text-white w3-wide">DATEN</span>
       </div>
+
     </div>
 
     <!-- SECTION DATA   -->
     <div class="w3-content w3-container w3-padding-64" id="data">
-      <h3 class="w3-center">Data</h3>
+      <h3 class="w3-center">Daten</h3>
       <p>
-        &DAVI& Untertitel<br />
-        &DAVI& Text woher die Daten kommen nach Aufgabenstellung
+        <h5>Datenquelle</h5>
+        Unser Projekt verwendet die Daten der Abteilung für Wirtschaftliche und Soziale Angelegenheiten der Vereinten Nationen. Der Datensatz stammt aus:
+        <a href="https://population.un.org/wpp/Download/Standard/MostUsed/">https://population.un.org/wpp/Download/Standard/MostUsed/</a>
+        <br />
+        <h5>Beschreibung des Datensatzes</h5>
+        Der verwendete Datensatz trägt die Bezeichnung "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1". Er enthält verschiedene demographische Kennzahlen, die einen detaillierten Überblick über die globale Bevölkerungsentwicklung geben. Der Datensatz enthält Informationen über Aspekte wie Bevölkerungsgrösse, Wachstumsraten, Geschlechterverteilung, Fertilitätsraten, Lebenserwartung und weitere Informationen.
+        <br />
+        <h5>Datenaufbereitung</h5>
+        Der Datensatz wurde im Format .xlsx heruntergeladen. Zuerst musste diese Datei angepasst werden. Die ersten 15 Zeilen der Excel-Mappe wurden gelöscht, da diese nicht für das Projekt relevant waren. Zudem musste die Formatierung der ersten 11 Spalten entfernt werden, so dass die Daten nicht durchmischt werden, sobald die Datei formatiert wird. 
+        <br />
+        <div class="w3-center">
+          <img src="./media/dataUnformatted.png" width="60%" />
+        </div>
+        <br />
+        Im Anschluss an die Formatierung wurden die überflüssigen Excel-Blätter gelöscht und die für das Projekt relevanten Daten in eine Tabelle umgewandelt.
+        Um Probleme mit den Tabellenüberschriften zu vermeiden, mussten diese in sinnvolle Bezeichnungen umbenannt werden. 
+        <br />
+        <div class="w3-center">
+          <img src="./media/dataFormatted.png" width="60%" />
+        </div>
+        <br />
+        Zuletzt exportierten wir die Datei in eine .csv-Datei, um sie mit Hilfe von d3.js einlesen und für die Visualisierungen verwenden zu können.
       </p>
     </div>
     <!-- SECTION VISUALIZATION -->
@@ -209,7 +230,7 @@
     </div>
     <!-- SECTION DESIGN -->
     <div class="w3-content w3-container w3-padding-64" id="design">
-      <h3 class="w3-center">Desing</h3>
+      <h3 class="w3-center">Design</h3>
       <p>
         &DAVI& Untertitel<br />
         &DAVI& Hier die Info wieso weshalb warum man was hingebogen hat im D3
@@ -218,21 +239,51 @@
     <!-- SECTION DESIGN -->
 
     <div class="w3-content w3-container w3-padding-64" id="ref">
-      <h3 class="w3-center">References</h3>
+      <h3 class="w3-center">Quellen</h3>
       <p>
-        &DAVI& Untertitel<br />
-        &DAVI& Wo hast du was geklaut?, die Website hier ist von W3.org, einfach
-        in einer viel weniger fancy-version
+        <h5>Datenquelle</h5>
+        Unser Datensatz stammt von der Website der Vereinten Nationen. Dieser Datensatz ist eine umfassende und zuverlässige Quelle für demographische Kennzahlen weltweit.
+        <br />
+        <a href="https://population.un.org/wpp/Download/Standard/MostUsed/">https://population.un.org/wpp/Download/Standard/MostUsed/</a>
+        <br />
+        <h5>Vorlagen und Design</h5>
+        Für die Gestaltung unserer Webseite verwendeten wir die Vorlage aus dem Modul DAVI_HS23 der Hochschule Luzern. 
+        <br />
+        <a href="https://elearning.hslu.ch/ilias/goto.php?target=file_6015673_download&client_id=hslu">https://elearning.hslu.ch/ilias/goto.php?target=file_6015673_download&client_id=hslu</a>
+        <br />
+        <h5>Programmierunterstützung</h5>
+        Für die Programmierung und die Datenanalyse erhielten wir Unterstützung von ChatGPT4 von OpenAI. Diese Plattform hat uns bei der Programmierung, der Fehlersuche und der Optimierung unserer Algorithmen wertvolle Hilfe geleistet.
+        <br />
+        <a href="https://chat.openai.com/">https://chat.openai.com/</a>
+        <br />
+        <h5>Medienquellen</h5>
+        Alle verwendeten Bilder stammen von Pexels, einer Website für lizenzfreie Medien. 
+        <br />
+        <a href="https://www.pexels.com/de-de/">https://www.pexels.com/de-de/</a>
+        <br />
+        <h5>Datenvisualisierung</h5>
+        Für die Erstellung der Skizze für unsere Datenvisualisierungen wurde Tableau Desktop verwendet. 
+        <br />
+        <a href="https://www.tableau.com/de-de/products/desktop">https://www.tableau.com/de-de/products/desktop</a>
+        <br />
       </p>
     </div>
     <!-- SECTION DESIGN -->
 
     <div class="w3-content w3-container w3-padding-64" id="Team">
       <h3 class="w3-center">Team</h3>
-      <p>
-        &DAVI& Untertitel<br />
-        &DAVI& Kontaktdaten des Teams
-      </p>
+      <div class="w3-center">
+        <h3>Gus Delhees</h3>
+        gus.delhees@stud.hslu.ch
+        <br />
+        <img src="./media/GusDelhees.jpg" />
+        <br />
+        <br />
+        <h3>Mischa Matthias Rieder</h3>
+        mischa.rieder@stud.hslu.ch
+        <br />
+        <img src="./media/MischaMatthiasRieder.jpg" />
+      </div>
     </div>
   </body>
 </html>
