@@ -12,7 +12,7 @@ function drawMigrationsGraph(data, country) {
 
   // Set the dimensions and margins of the graph
   var margin = { top: 100, right: 30, bottom: 30, left: 100 },
-    width = 900 - margin.left - margin.right,
+    width = 750 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom;
 
   // Append the svg object to the specified container

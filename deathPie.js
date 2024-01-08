@@ -21,7 +21,7 @@ function drawDeathPie(data, currentYear) {
   container
     .append("div")
     .attr("class", "chart-title")
-    .text("Top 5 Countries - deaths (" + currentYear + ")")
+    .text("Top 5 Countries - Deaths (" + currentYear + ")")
     .style("padding-left", "5%")
     .style("font-weight", "bold");
 
